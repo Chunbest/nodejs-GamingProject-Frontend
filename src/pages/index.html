@@ -1,412 +1,434 @@
 <!doctype html>
 <html lang="zh-Hant-TW">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bootstrap demo</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <style>
-      .title-with-line {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<style>
+		.title-with-line {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
 
-      .title-with-line::before,
-      .title-with-line::after {
-        content: "";
-        width: 100px;
-        height: 2px;
-        background-color: #000;
-        margin: 0 8px;
-      }
+		.title-with-line::before,
+		.title-with-line::after {
+			content: "";
+			width: 100px;
+			height: 2px;
+			background-color: #000;
+			margin: 0 8px;
+		}
 
-      .quality-home-design {
-        background-image: url('https://fakeimg.pl/1920x1080/?text=Quality%20Home%20Design');
-        background-position: center center;
-        background-size: cover;
-        background-repeat: no-repeat;
-      }
+		.quality-home-design {
+			background-image: url('https://fakeimg.pl/1920x1080/?text=Quality%20Home%20Design');
+			background-position: center center;
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
 
-      .header-slide-1 {
-        background-image: url('https://fakeimg.pl/1000/');
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-        height: 500px;
-      }
-    </style>
+		.header-slide-1 {
+			background-image: url('https://fakeimg.pl/1000/');
+			background-size: cover;
+			background-position: center center;
+			background-repeat: no-repeat;
+			height: 500px;
+		}
+	</style>
 
-  </head>
+</head>
 
-  <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">TTH 質感家 | 質感家具,打造舒適生活</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+<body>
+	<!-- 導覽列 -->
+	<nav class="flex items-center justify-between flex-wrap bg-gray-100 px-4 py-2">
+		<div class="flex items-center flex-shrink-0 text-black mr-6">
+			<a class="font-bold text-xl" href="#">TTH 質感家 | 質感家具,打造舒適生活</a>
+		</div>
+		<!-- 漢堡按鈕（小螢幕顯示） -->
+		<div class="block lg:hidden">
+			<button id="menu-toggle" class="flex items-center px-3 py-2 border rounded text-gray-700 border-gray-400">
+				<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+				</svg>
+			</button>
+		</div>
+		<!-- 導覽選單 -->
+		<div id="menu" class="w-full lg:flex lg:items-center lg:w-auto hidden">
+			<div
+				class="text-sm flex flex-col lg:flex-row items-start lg:items-center justify-end gap-2 lg:gap-0 w-full">
+				<form class="flex mb-2 lg:mb-0" role="search">
+					<input class="form-input px-2 py-1 border border-gray-300 rounded mr-2" type="search"
+						placeholder="Search" aria-label="Search">
+				</form>
+				<a class="text-gray-700 hover:text-blue-700 mr-4 flex items-center" href="#">產品分類</a>
+				<a class="text-gray-700 hover:text-blue-700 mr-4 flex items-center" href="#">關於 TTH</a>
+				<a class="text-gray-700 hover:text-blue-700 mr-4 flex items-center" href="#">靈感佈置專欄</a>
+				<a class="text-gray-700 hover:text-blue-700 mr-4 flex items-center" href="#"><i
+						class="bi bi-cart2"></i></a>
+				<a class="text-gray-700 hover:text-blue-700 flex items-center" href="#"><i
+						class="bi bi-person-circle"></i></a>
+			</div>
+		</div>
+	</nav>
 
-        
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav ms-auto">
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            </form>
-            <a class="nav-link" href="#">產品分類</a>
-            <a class="nav-link" href="#">關於 TTH</a>
-            <a class="nav-link" href="#">靈感佈置專欄</a>
-            <a class="nav-link" href="#"><i class="bi bi-cart2"></i></a>
-            <a class="nav-link" href="#"><i class="bi bi-person-circle"></i></a>
-          </div>
-        </div>
-      </div>
-    </nav>
+	<script>
+		// 漢堡選單 JS
+		document.addEventListener('DOMContentLoaded', function () {
+			var menuToggle = document.getElementById('menu-toggle');
+			var menu = document.getElementById('menu');
+			if (menuToggle && menu) {
+				menuToggle.onclick = function () {
+					menu.classList.toggle('hidden');
+				}
+			}
+		});
+	</script>
 
-    <div class="alert alert-light text-center m-0" role="alert">
-      🎉 周年慶！滿千送百，精美小禮加碼送～ 🎉
-    </div>
+	<div class="alert alert-light text-center m-0" role="alert">
+		🎉 周年慶！滿千送百，精美小禮加碼送～ 🎉
+	</div>
 
-    <header>
-      <!-- Slider main container -->
-      <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" navigation="true"
-        space-between="30" loop="true">
-        <swiper-slide>
-          <div class="header-slide-1 position-relative">
-            <div class="position-absolute" style="top: 100px;left: 250px;">
-              <h2>窩在家，好沙發</h2>
-              <a href="#" class="btn btn-outline-primary">立即選購</a>
-            </div>
-          </div>
-        </swiper-slide>
-        <swiper-slide>
-          <div class="header-slide-1 position-relative">
-            <div class="position-absolute" style="top: 100px;left: 200px;">
-              <h2>窩在家，好沙發</h2>
-              <a href="#" class="btn btn-outline-primary">立即選購</a>
-            </div>
-          </div>
-        </swiper-slide>
-      </swiper-container>
-    </header>
+	<header>
+		<!-- Slider main container -->
+		<swiper-container class="mySwiper" pagination="true" pagination-clickable="true" navigation="true"
+			space-between="30" loop="true">
+			<swiper-slide>
+				<div class="header-slide-1 position-relative">
+					<div class="position-absolute" style="top: 100px;left: 250px;">
+						<h2>窩在家，好沙發</h2>
+						<a href="#" class="btn btn-outline-primary">立即選購</a>
+					</div>
+				</div>
+			</swiper-slide>
+			<swiper-slide>
+				<div class="header-slide-1 position-relative">
+					<div class="position-absolute" style="top: 100px;left: 200px;">
+						<h2>窩在家，好沙發</h2>
+						<a href="#" class="btn btn-outline-primary">立即選購</a>
+					</div>
+				</div>
+			</swiper-slide>
+		</swiper-container>
+	</header>
 
-    <section class="container my-4">
-      <h2 class="text-center my-3 title-with-line">熱銷推薦</h2>
-      <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" slides-per-view="5"
-        space-between="30" free-mode="true">
-        <swiper-slide>
-          <div class="card position-relative">
-            <div class="position-absolute" style="right:15px; top: 5px;">
-              <i class="bi bi-suit-heart" style="font-size: 30px;"></i>
-            </div>
-            <img src="https://fakeimg.pl/200/" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">神隊友電腦椅</h5>
-              <p class="card-text">$77,777</p>
-              <button href="#" class="btn btn-outline-primary">加入購物車</button>
-            </div>
-          </div>
-        </swiper-slide>
-        <swiper-slide>
-          <div class="card position-relative">
-            <div class="position-absolute" style="right:15px; top: 5px;">
-              <i class="bi bi-suit-heart" style="font-size: 30px;"></i>
-            </div>
-            <img src="https://fakeimg.pl/200/" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">多功能升降桌</h5>
-              <p class="card-text">$6,666</p>
-              <button href="#" class="btn btn-outline-primary">加入購物車</button>
-            </div>
-          </div>
-        </swiper-slide>
-        <swiper-slide>
-          <div class="card position-relative">
-            <div class="position-absolute" style="right:15px; top: 5px;">
-              <i class="bi bi-suit-heart" style="font-size: 30px;"></i>
-            </div>
-            <img src="https://fakeimg.pl/200/" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">木質讀書架</h5>
-              <p class="card-text">$1,111</p>
-              <button href="#" class="btn btn-outline-primary">加入購物車</button>
-            </div>
-          </div>
-        </swiper-slide>
-        <swiper-slide>
-          <div class="card position-relative">
-            <div class="position-absolute" style="right:15px; top: 5px;">
-              <i class="bi bi-suit-heart" style="font-size: 30px;"></i>
-            </div>
-            <img src="https://fakeimg.pl/200/" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">韓劇洞洞板</h5>
-              <p class="card-text">$666</p>
-              <button href="#" class="btn btn-outline-primary">加入購物車</button>
-            </div>
-          </div>
-        </swiper-slide>
-        <swiper-slide>
-          <div class="card position-relative">
-            <div class="position-absolute" style="right:15px; top: 5px;">
-              <i class="bi bi-suit-heart" style="font-size: 30px;"></i>
-            </div>
-            <img src="https://fakeimg.pl/200/" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">陪伴靠枕</h5>
-              <p class="card-text">$555</p>
-              <button href="#" class="btn btn-outline-primary">加入購物車</button>
-            </div>
-          </div>
-        </swiper-slide>
-      </swiper-container>
-    </section>
+	<section class="container my-4">
+		<h2 class="text-center my-3 title-with-line">熱銷推薦</h2>
+		<swiper-container class="mySwiper" pagination="true" pagination-clickable="true" slides-per-view="5"
+			space-between="30" free-mode="true">
+			<swiper-slide>
+				<div class="card position-relative">
+					<div class="position-absolute" style="right:15px; top: 5px;">
+						<i class="bi bi-suit-heart" style="font-size: 30px;"></i>
+					</div>
+					<img src="https://fakeimg.pl/200/" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">神隊友電腦椅</h5>
+						<p class="card-text">$77,777</p>
+						<button href="#" class="btn btn-outline-primary">加入購物車</button>
+					</div>
+				</div>
+			</swiper-slide>
+			<swiper-slide>
+				<div class="card position-relative">
+					<div class="position-absolute" style="right:15px; top: 5px;">
+						<i class="bi bi-suit-heart" style="font-size: 30px;"></i>
+					</div>
+					<img src="https://fakeimg.pl/200/" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">多功能升降桌</h5>
+						<p class="card-text">$6,666</p>
+						<button href="#" class="btn btn-outline-primary">加入購物車</button>
+					</div>
+				</div>
+			</swiper-slide>
+			<swiper-slide>
+				<div class="card position-relative">
+					<div class="position-absolute" style="right:15px; top: 5px;">
+						<i class="bi bi-suit-heart" style="font-size: 30px;"></i>
+					</div>
+					<img src="https://fakeimg.pl/200/" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">木質讀書架</h5>
+						<p class="card-text">$1,111</p>
+						<button href="#" class="btn btn-outline-primary">加入購物車</button>
+					</div>
+				</div>
+			</swiper-slide>
+			<swiper-slide>
+				<div class="card position-relative">
+					<div class="position-absolute" style="right:15px; top: 5px;">
+						<i class="bi bi-suit-heart" style="font-size: 30px;"></i>
+					</div>
+					<img src="https://fakeimg.pl/200/" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">韓劇洞洞板</h5>
+						<p class="card-text">$666</p>
+						<button href="#" class="btn btn-outline-primary">加入購物車</button>
+					</div>
+				</div>
+			</swiper-slide>
+			<swiper-slide>
+				<div class="card position-relative">
+					<div class="position-absolute" style="right:15px; top: 5px;">
+						<i class="bi bi-suit-heart" style="font-size: 30px;"></i>
+					</div>
+					<img src="https://fakeimg.pl/200/" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">陪伴靠枕</h5>
+						<p class="card-text">$555</p>
+						<button href="#" class="btn btn-outline-primary">加入購物車</button>
+					</div>
+				</div>
+			</swiper-slide>
+		</swiper-container>
+	</section>
 
-    <section class="my-4">
-      <h2 class="text-center my-3 title-with-line">家具系列</h2>
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-8">
-            <div class="row flex-row-reverse">
-              <div class="col-md-5">
-                <div class="d-flex flex-column h-100 justify-content-end text-end">
-                  <h3>故鄉客廳</h3>
-                  <p>倒出剛泡好的茶，白霧在矮式茶几上方旋繞，裊裊動人。</p>
-                  <p>柔軟的沙發讓人深陷進去。</p>
-                  <p>陽光灑入，回憶故鄉的味道。</p>
-                  <div>
-                    <a href="#" class="btn btn-outline-primary">看更多新品→</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-7">
-                <div class="d-flex align-items-center">
-                  <div class="me-2">
-                    <img src="https://fakeimg.pl/300/" alt="">
-                  </div>
-                  <div class="d-flex flex-column me-3">
-                    <img src="https://fakeimg.pl/100/" class="mb-2" alt="">
-                    <img src="https://fakeimg.pl/100/" class="mb-2" alt="">
-                    <img src="https://fakeimg.pl/100/" class="mb-2" alt="">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <section class="my-4">
-      <h2 class="text-center my-3 title-with-line">家居系列</h2>
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-8">
-            <div class="row">
-              <div class="col-md-5">
-                <div class="d-flex flex-column h-100 justify-content-end">
-                  <h3>韓劇簡單生活</h3>
-                  <p>房間換成統一的淺白色系。</p>
-                  <p>擺上小盆栽、乾燥花,讓人每天的心情很放鬆愜意。</p>
-                  <p>點上香氛蠟燭、打開閱讀燈,慵懶著躺在躺椅上。</p>
-                  <p>享受生活,我就是自己人生的主角。</p>
-                  <div>
-                    <a href="#" class="btn btn-outline-primary">看更多新品→</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-7">
-                <div class="d-flex align-items-center">
-                  <div class="d-flex flex-column me-3">
-                    <img src="https://fakeimg.pl/100/" class="mb-2" alt="">
-                    <img src="https://fakeimg.pl/100/" class="mb-2" alt="">
-                    <img src="https://fakeimg.pl/100/" class="mb-2" alt="">
-                  </div>
-                  <div class="flex-grow-1">
-                    <img src="https://fakeimg.pl/300/" alt="">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="quality-home-design py-4">
-      <h2 class="text-center my-3 title-with-line">質感家，質感設計</h2>
-      <div class="container border border-2 border-dark p-4">
-        <div class="row">
-          <div class="col-md-3">
-            <div class="card border border-2 border-dark h-100">
-              <img src="https://fakeimg.pl/300/" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">歐洲家居市場新星</h5>
-                <p class="card-text">北歐現代風家具設計師 Emma Larsen</p>
-                <p class="card-text">目前擔任丹麥設計品 Normann
-                  Copenhagen 的首席設計師，曾與 Bolia、Muuto 等知名品牌合作。擅長以極簡主義結合溫暖木質。打造出優雅且實用的家具作品。</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card border border-2 border-dark h-100">
-              <img src="https://fakeimg.pl/300/" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">日本國際家具展年度設計師</h5>
-                <p class="card-text">日式簡約風家具設計師 Hiroshi Nakamura</p>
-                <p class="card-text">曾多次於國際家具展覽中獲得設計大獎,其作品展現了日式極簡的純粹美學,並受到無印良品、Nitori等品牌青睞並合作推出系列家具。</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card border border-2 border-dark h-100">
-              <img src="https://fakeimg.pl/300/" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">義大利當代設計推動者</h5>
-                <p class="card-text">現代奢華風家具設計師 Giovanni Bianchi</p>
-                <p class="card-text">目前服務於義大利家具品牌 Poliform,擅長將奢華材料與現代設計結合,創造出時尚且具辨識度的家具作品。其設計在 Cassina、B&B Italia
-                  等高端品牌中備受推崇。</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card border border-2 border-dark h-100">
-              <img src="https://fakeimg.pl/300/" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">國際青年設計師論壇優秀獎</h5>
-                <p class="card-text">北歐極簡風家具設計師 Elin Håkansson</p>
-                <p class="card-text">來自瑞典的年輕設計師,以純粹簡約的設計風格著稱,與 HAY、IKEA 有多次成功合作,其家具作品完美展現了北歐設計的清新與舒適感。</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="my-4">
-      <h2 class="text-center my-3 title-with-line">怦然心動的居家佈置魔法</h2>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3">
-            <div class="card h-100">
-              <img src="https://fakeimg.pl/300/" class="card-img-top" alt="...">
-              <div class="card-body d-flex flex-column">
-                <h5 class="card-title">頂樓露台變身休閒花園的簡單改造方案</h5>
-                <p class="card-text">
-                  想要利用頂樓露台打造一個屬於自己的秘密花園嗎?本文提供了簡單易行的造方案,從植物選擇到家具配置,讓你的台變身為放鬆身心的綠色天堂,無論是獨處還是與朋友共度時光,都能享受自然的療癒力量
-                </p>
-                <div class="mt-auto">
-                  <a href="#" class="btn btn-outline-primary ">立即閱讀</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card h-100">
-              <img src="https://fakeimg.pl/300/" class="card-img-top" alt="...">
-              <div class="card-body d-flex flex-column">
-                <h5 class="card-title">【10分鐘搞定小客廳改造】輕鬆提升居家質感的3個祕訣</h5>
-                <p class="card-text">
-                  即使是小坪數的客廳也能充滿設計感!本文教你只需10分鐘就能快速改造空間的3個祕訣:選擇多功能家具、巧妙利用燈光效果、並搭配適當的色彩點綴,讓你的客廳變得既舒適又時尚。
-                </p>
-                <div class="mt-auto">
-                  <a href="#" class="btn btn-outline-primary ">立即閱讀</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card h-100">
-              <img src="https://fakeimg.pl/300/" class="card-img-top" alt="...">
-              <div class="card-body d-flex flex-column">
-                <h5 class="card-title">打造法式田園風臥室的4個要點</h5>
-                <p class="card-text">
-                  嚮往法式田園風的浪漫臥室嗎?無論是家具選擇還是色彩搭配,本文為你整理了4個關鍵要點,讓你輕鬆打造出宛如身處法國鄉村的溫馨臥室,每天醒來都像度假一般。
-                </p>
-                <div class="mt-auto">
-                  <a href="#" class="btn btn-outline-primary ">立即閱讀</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card h-100">
-              <img src="https://fakeimg.pl/300/" class="card-img-top" alt="...">
-              <div class="card-body d-flex flex-column">
-                <h5 class="card-title">【餐廳布置新提案】5款時尚餐椅推薦</h5>
-                <p class="card-text">
-                  餐椅不僅僅是用來坐的,還能成為餐廳中的亮點!本文精選了5款時尚餐椅,從極簡到復古,滿足不同風格的需求,讓你的餐廳不僅舒適,還充滿設計感。
-                </p>
-                <div class="mt-auto">
-                  <a href="#" class="btn btn-outline-primary ">立即閱讀</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer class="bg-light text-dark py-4">
-      <div class="container">
-        <div class="row align-items-center">
-          <!-- 左側：標題 & 公司資訊 -->
-          <div class="col-md-4 mb-3 mb-md-0">
-            <h4 class="fw-bold h1">TTH 質感家</h4>
-          </div>
-  
-          <div class="col-md-4 mb-3 mb-md-0">
-            <nav>
-              <ul class="list-unstyled d-flex gap-3 mb-0">
-                <li><a href="#" class="text-decoration-none text-dark">產品資訊</a></li>
-                <li><a href="#" class="text-decoration-none text-dark">關於 TTH</a></li>
-                <li><a href="#" class="text-decoration-none text-dark">靈感布置專欄</a></li>
-              </ul>
-            </nav>
-          </div>
-  
-          <div class="col-md-4 text-md-end">
-            <p class="mb-2 fw-semibold">Follow us</p>
-            <a href="#" class="text-dark text-decoration-none me-3">
-              <i class="bi bi-facebook fs-5"></i>
-            </a>
-            <a href="#" class="text-dark text-decoration-none me-3">
-              <i class="bi bi-instagram fs-5"></i>
-            </a>
-            <a href="#" class="text-dark text-decoration-none">
-              <i class="bi bi-line fs-5"></i>
-            </a>
-          </div>
-        </div>
-        <p class="mb-1">
-          100 台北市正義國際路 123 號 12 樓<br />
-          電話：07-77777766
-        </p>
-        <p class="mb-0">
-          版權宣告：© Copyright 2021 TTH.
-          <br class="d-md-none" />
-          All Rights Reserved
-        </p>
-      </div>
-    </footer>
+	<section class="my-4">
+		<h2 class="text-center my-3 title-with-line">家具系列</h2>
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-8">
+					<div class="row flex-row-reverse">
+						<div class="col-md-5">
+							<div class="d-flex flex-column h-100 justify-content-end text-end">
+								<h3>故鄉客廳</h3>
+								<p>倒出剛泡好的茶，白霧在矮式茶几上方旋繞，裊裊動人。</p>
+								<p>柔軟的沙發讓人深陷進去。</p>
+								<p>陽光灑入，回憶故鄉的味道。</p>
+								<div>
+									<a href="#" class="btn btn-outline-primary">看更多新品→</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-7">
+							<div class="d-flex align-items-center">
+								<div class="me-2">
+									<img src="https://fakeimg.pl/300/" alt="">
+								</div>
+								<div class="d-flex flex-column me-3">
+									<img src="https://fakeimg.pl/100/" class="mb-2" alt="">
+									<img src="https://fakeimg.pl/100/" class="mb-2" alt="">
+									<img src="https://fakeimg.pl/100/" class="mb-2" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
 
+	<section class="my-4">
+		<h2 class="text-center my-3 title-with-line">家居系列</h2>
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-8">
+					<div class="row">
+						<div class="col-md-5">
+							<div class="d-flex flex-column h-100 justify-content-end">
+								<h3>韓劇簡單生活</h3>
+								<p>房間換成統一的淺白色系。</p>
+								<p>擺上小盆栽、乾燥花,讓人每天的心情很放鬆愜意。</p>
+								<p>點上香氛蠟燭、打開閱讀燈,慵懶著躺在躺椅上。</p>
+								<p>享受生活,我就是自己人生的主角。</p>
+								<div>
+									<a href="#" class="btn btn-outline-primary">看更多新品→</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-7">
+							<div class="d-flex align-items-center">
+								<div class="d-flex flex-column me-3">
+									<img src="https://fakeimg.pl/100/" class="mb-2" alt="">
+									<img src="https://fakeimg.pl/100/" class="mb-2" alt="">
+									<img src="https://fakeimg.pl/100/" class="mb-2" alt="">
+								</div>
+								<div class="flex-grow-1">
+									<img src="https://fakeimg.pl/300/" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+	<section class="quality-home-design py-4">
+		<h2 class="text-center my-3 title-with-line">質感家，質感設計</h2>
+		<div class="container border border-2 border-dark p-4">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="card border border-2 border-dark h-100">
+						<img src="https://fakeimg.pl/300/" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">歐洲家居市場新星</h5>
+							<p class="card-text">北歐現代風家具設計師 Emma Larsen</p>
+							<p class="card-text">目前擔任丹麥設計品 Normann
+								Copenhagen 的首席設計師，曾與 Bolia、Muuto 等知名品牌合作。擅長以極簡主義結合溫暖木質。打造出優雅且實用的家具作品。</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="card border border-2 border-dark h-100">
+						<img src="https://fakeimg.pl/300/" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">日本國際家具展年度設計師</h5>
+							<p class="card-text">日式簡約風家具設計師 Hiroshi Nakamura</p>
+							<p class="card-text">曾多次於國際家具展覽中獲得設計大獎,其作品展現了日式極簡的純粹美學,並受到無印良品、Nitori等品牌青睞並合作推出系列家具。</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="card border border-2 border-dark h-100">
+						<img src="https://fakeimg.pl/300/" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">義大利當代設計推動者</h5>
+							<p class="card-text">現代奢華風家具設計師 Giovanni Bianchi</p>
+							<p class="card-text">目前服務於義大利家具品牌 Poliform,擅長將奢華材料與現代設計結合,創造出時尚且具辨識度的家具作品。其設計在 Cassina、B&B
+								Italia
+								等高端品牌中備受推崇。</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="card border border-2 border-dark h-100">
+						<img src="https://fakeimg.pl/300/" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">國際青年設計師論壇優秀獎</h5>
+							<p class="card-text">北歐極簡風家具設計師 Elin Håkansson</p>
+							<p class="card-text">來自瑞典的年輕設計師,以純粹簡約的設計風格著稱,與 HAY、IKEA 有多次成功合作,其家具作品完美展現了北歐設計的清新與舒適感。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="my-4">
+		<h2 class="text-center my-3 title-with-line">怦然心動的居家佈置魔法</h2>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="card h-100">
+						<img src="https://fakeimg.pl/300/" class="card-img-top" alt="...">
+						<div class="card-body d-flex flex-column">
+							<h5 class="card-title">頂樓露台變身休閒花園的簡單改造方案</h5>
+							<p class="card-text">
+								想要利用頂樓露台打造一個屬於自己的秘密花園嗎?本文提供了簡單易行的造方案,從植物選擇到家具配置,讓你的台變身為放鬆身心的綠色天堂,無論是獨處還是與朋友共度時光,都能享受自然的療癒力量
+							</p>
+							<div class="mt-auto">
+								<a href="#" class="btn btn-outline-primary ">立即閱讀</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="card h-100">
+						<img src="https://fakeimg.pl/300/" class="card-img-top" alt="...">
+						<div class="card-body d-flex flex-column">
+							<h5 class="card-title">【10分鐘搞定小客廳改造】輕鬆提升居家質感的3個祕訣</h5>
+							<p class="card-text">
+								即使是小坪數的客廳也能充滿設計感!本文教你只需10分鐘就能快速改造空間的3個祕訣:選擇多功能家具、巧妙利用燈光效果、並搭配適當的色彩點綴,讓你的客廳變得既舒適又時尚。
+							</p>
+							<div class="mt-auto">
+								<a href="#" class="btn btn-outline-primary ">立即閱讀</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="card h-100">
+						<img src="https://fakeimg.pl/300/" class="card-img-top" alt="...">
+						<div class="card-body d-flex flex-column">
+							<h5 class="card-title">打造法式田園風臥室的4個要點</h5>
+							<p class="card-text">
+								嚮往法式田園風的浪漫臥室嗎?無論是家具選擇還是色彩搭配,本文為你整理了4個關鍵要點,讓你輕鬆打造出宛如身處法國鄉村的溫馨臥室,每天醒來都像度假一般。
+							</p>
+							<div class="mt-auto">
+								<a href="#" class="btn btn-outline-primary ">立即閱讀</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="card h-100">
+						<img src="https://fakeimg.pl/300/" class="card-img-top" alt="...">
+						<div class="card-body d-flex flex-column">
+							<h5 class="card-title">【餐廳布置新提案】5款時尚餐椅推薦</h5>
+							<p class="card-text">
+								餐椅不僅僅是用來坐的,還能成為餐廳中的亮點!本文精選了5款時尚餐椅,從極簡到復古,滿足不同風格的需求,讓你的餐廳不僅舒適,還充滿設計感。
+							</p>
+							<div class="mt-auto">
+								<a href="#" class="btn btn-outline-primary ">立即閱讀</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="bg-light text-dark py-4">
+		<div class="container">
+			<div class="row align-items-center">
+				<!-- 左側：標題 & 公司資訊 -->
+				<div class="col-md-4 mb-3 mb-md-0">
+					<h4 class="fw-bold h1">TTH 質感家</h4>
+				</div>
+
+				<div class="col-md-4 mb-3 mb-md-0">
+					<nav>
+						<ul class="list-unstyled d-flex gap-3 mb-0">
+							<li><a href="#" class="text-decoration-none text-dark">產品資訊</a></li>
+							<li><a href="#" class="text-decoration-none text-dark">關於 TTH</a></li>
+							<li><a href="#" class="text-decoration-none text-dark">靈感布置專欄</a></li>
+						</ul>
+					</nav>
+				</div>
+
+				<div class="col-md-4 text-md-end">
+					<p class="mb-2 fw-semibold">Follow us</p>
+					<a href="#" class="text-dark text-decoration-none me-3">
+						<i class="bi bi-facebook fs-5"></i>
+					</a>
+					<a href="#" class="text-dark text-decoration-none me-3">
+						<i class="bi bi-instagram fs-5"></i>
+					</a>
+					<a href="#" class="text-dark text-decoration-none">
+						<i class="bi bi-line fs-5"></i>
+					</a>
+				</div>
+			</div>
+			<p class="mb-1">
+				100 台北市正義國際路 123 號 12 樓<br />
+				電話：07-77777766
+			</p>
+			<p class="mb-0">
+				版權宣告：© Copyright 2021 TTH.
+				<br class="d-md-none" />
+				All Rights Reserved
+			</p>
+		</div>
+	</footer>
 
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"></script>
-  </body>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
+</body>
 
 </html>
