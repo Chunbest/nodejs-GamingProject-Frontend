@@ -22,11 +22,11 @@ export default function Home() {
 				</div>
 				<div className="text-sm flex sm:flex-col lg:flex-row items-start lg:items-center justify-end gap-[2em] lg:mx-4 sm:hidden">
 
-					<a href="#" className="text-gray-700 hover:text-blue-700">產品分類</a>
-					<a href="#" className="text-gray-700 hover:text-blue-700">關於我們</a>
-					<a href="#" className="text-gray-700 hover:text-blue-700">電競專欄</a>
-					<a href="#" className="text-gray-700 hover:text-blue-700 flex items-center"><ShoppingCart className="h-5 w-5" /></a>
-					{/* <a href="#" className="text-gray-700 hover:text-blue-700 flex items-center"><User className="h-5 w-5" /></a> */}
+					<a href="#" className="text-gray-700 hover:text-blue-700 py-[5px] ">產品分類</a>
+					<a href="#" className="text-gray-700 hover:text-blue-700 py-[5px]">關於我們</a>
+					<a href="#" className="text-gray-700 hover:text-blue-700  py-[5px]">電競專欄</a>
+					<a href="#" className="text-gray-700 hover:text-blue-700 flex items-center py-[5px]"><ShoppingCart className="h-5 w-5 " /></a>
+					{/* 登入註冊按鈕 */}
 					<LoginRegisterButton href="/login" />
 
 				</div>
