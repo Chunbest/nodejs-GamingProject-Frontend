@@ -4,22 +4,14 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Menu, ShoppingCart, User } from "lucide-react"
-import Logo from "@/components/ui/Logo"
 import { LoginRegisterButton } from "@/components/ui/LoginRegisterButton"
 
-export default function Home() {
+export default function Navbar() {
 	const [menuOpen, setMenuOpen] = useState(false)
 	return (
 		<>
-			<nav className="flex items-center justify-between flex-wrap bg-gray-100 px-4 py-2 shadow-md">
+			<nav >
 				{/* 導覽連結 - 大螢幕顯示 */}
-				<div className="flex items-center text-black font-bold text-xl ">
-					{/* Logo 區塊 */}
-					<Logo />
-					<form role="search" className="flex items-center space-x-2">
-						<Input type="search" placeholder="Search" className="w-48 sm:hidden" />
-					</form>
-				</div>
 				<div className="text-sm flex sm:flex-col lg:flex-row items-start lg:items-center justify-end gap-[2em] lg:mx-4 sm:hidden">
 
 					<a href="#" className="text-gray-700 hover:text-blue-700 py-[5px] ">產品分類</a>
@@ -50,14 +42,7 @@ export default function Home() {
 						</SheetContent>
 					</Sheet>
 				</div>
-
-
-
-
 			</nav>
-
-
-
 		</>
 
 	)
