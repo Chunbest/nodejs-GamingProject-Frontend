@@ -1,5 +1,5 @@
 // 引入全域樣式
-import "@/index.css"
+import "../../index.css"
 // 引入 Navbar 元件
 import Navbar from "@/components/layout/navbar"
 // 引入 Logo 元件

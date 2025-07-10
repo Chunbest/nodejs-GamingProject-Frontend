@@ -3,21 +3,84 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 自定義基礎樣式 - 在 Tailwind 基礎樣式之後覆蓋 */
+
 :root {
+	/* 字體設定 */
 	font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+	/* 行高設定 */
 	line-height: 1.5;
+	/* 字體粗細 */
 	font-weight: 400;
+	/* 顯示模式 */
 	display: contents;
+	/* 雙向文字隔離 */
 	unicode-bidi: isolate;
+	/* 顏色主題 */
 	color-scheme: light dark;
+	/* 文字顏色 */
 	color: rgba(255, 255, 255, 0.87);
-	background-color: #242424;
-
-
+	/* 背景顏色 */
+	/* background-color: #242424; */
+	/* 字體合成 */
 	font-synthesis: none;
+	/* 文字渲染優化 */
 	text-rendering: optimizeLegibility;
+	/* Webkit 字體平滑 */
 	-webkit-font-smoothing: antialiased;
+	/* Mozilla 字體平滑 */
 	-moz-osx-font-smoothing: grayscale;
+	/* 設定根元素的最大寬度為 1280px */
+	max-width: 1280px;
+	/* 使用自動邊距讓元素水平置中 */
+	margin: 0 auto;
+	/* 設定內邊距為 1rem */
+	padding: 1rem;
+	/* 設定文字對齊方式為置中 */
+	text-align: center;
+}
+
+/* 根元素樣式設定 */
+/* #root {
+} */
+a {
+	font-weight: 500;
+	color: white !important;
+	text-decoration: inherit;
+	transition: color 0.3s ease;
+}
+
+a:hover {
+	color: #535bf2 !important;
+}
+
+/* Logo 基本樣式 */
+.logo {
+	height: 3em;
+	padding: 1em;
+	will-change: filter;
+	transition: filter 300ms;
+}
+
+/* Logo 懸停效果 */
+.logo:hover {
+	filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+/* React Logo 懸停效果 */
+.logo.react:hover {
+	filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+/* Logo 旋轉動畫關鍵幀 */
+@keyframes logo-spin {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
 }
 
 /* 登入註冊標籤形狀 */
@@ -45,20 +108,13 @@
 .bg-red-gradient {
 	background: linear-gradient(to bottom, #d13636, #662828);
 }
+
 /* 這裡是 hover 時候顯示的背景顏色 */
 .bg-red-gradient-hover {
-	background: linear-gradient(to top, #662828, #f1e0e0);
-}
-a {
-	font-weight: 500;
-	color: white;
-	text-decoration: inherit;
+	background: linear-gradient(to top, #662828, #f1e0e0) !important;
 }
 
-a:hover {
-	color: #535bf2;
 
-}
 
 body {
 	margin: 0;
@@ -94,17 +150,29 @@ button:focus-visible {
 	outline: 4px auto -webkit-focus-ring-color;
 }
 
+
+/* 淺色主題樣式設定 - 當使用者偏好淺色主題時套用 */
 @media (prefers-color-scheme: light) {
+
+	/* 根元素樣式 - 設定文字顏色和背景色 */
 	:root {
 		color: #213547;
-		background-color: black;
+		/* 深灰色文字 */
+		background-color: rgb(35, 185, 211);
+		/* 黑色背景 */
 	}
 
-	a:hover {
-		color: #747bff;
-	}
 
+
+	/* 按鈕樣式 - 淺色主題下的背景色 */
 	button {
 		background-color: #f9f9f9;
+		/* 淺灰色按鈕背景 */
+	}
+
+	@media (prefers-color-scheme: light) {
+		a:hover {
+			color: #747bff !important;
+		}
 	}
 }

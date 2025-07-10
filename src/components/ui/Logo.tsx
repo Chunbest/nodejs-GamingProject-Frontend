@@ -1,4 +1,6 @@
 import logo from '/logo.png';
+// 引入全域樣式
+import "../../index.css"
 
 export default function Logo() {
 	return (
