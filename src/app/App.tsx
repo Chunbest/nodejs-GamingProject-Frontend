@@ -7,6 +7,8 @@ import '../App.css';
 import { Routes, Route } from 'react-router-dom'
 import Header from '../components/layout/header.tsx';
 import SignUp from '../features/auth/components/registerform.tsx'; // 引入註冊頁面元件
+import { Toaster } from "@/components/ui/toaster"
+
 
 function App() {
 	const [count, setCount] = useState(0);
@@ -15,9 +17,11 @@ function App() {
 		<>
 			{/* 網站導覽列 - 固定在頁面頂部 */}
 			<Header />
-
+			{/* Toast 通知組件 */}
+			<Toaster />
 			{/* 路由設定區域 - 根據 URL 顯示對應的頁面元件 */}
 			<Routes>
+				
 				{/* 註冊頁面路由 - 當 URL 為 /register 時顯示註冊表單 */}
 				<Route path="/register" element={<SignUp />} />
 				{/* 登入頁面路由 - 待實作 */}
@@ -35,6 +39,7 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a> */}
 
+		
 		</>
 	);
 }

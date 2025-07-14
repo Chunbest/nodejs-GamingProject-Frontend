@@ -1,4 +1,4 @@
-//定義資料格式 + 驗證規則
+//定義資料型別格式 + 驗證規則
 //Zod 驗證 schema
 
 import { z } from "zod";
@@ -7,7 +7,7 @@ import { z } from "zod";
 const nameRegex = /^[A-Za-z0-9]{2,10}$/; // 不含特殊符號與空白
 const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,16}$/;
 
-export const RegisterSchema = z.object({
+export const RegisterSchemaType = z.object({
 	name: z
 		.string()
 		.min(2, '名稱不能為空')
@@ -24,4 +24,6 @@ export const RegisterSchema = z.object({
 	role: z.enum(['user', 'admin']), // 這兩種角色	
 })
 
-export type RegisterSchema = z.infer<typeof RegisterSchema>
+// 根據上方定義的 Zod 驗證 schema（RegisterSchemaType）
+// 自動推斷出對應的 TypeScript 型別，方便在 API 請求或元件中引用，確保型別安全。
+export type RegisterSchema = z.infer<typeof RegisterSchemaType>

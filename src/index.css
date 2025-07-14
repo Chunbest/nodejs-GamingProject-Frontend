@@ -158,11 +158,9 @@ button:focus-visible {
 	:root {
 		color: #213547;
 		/* 深灰色文字 */
-		background-color: rgb(35, 185, 211);
+		background-color: rgb(6, 6, 6);
 		/* 黑色背景 */
 	}
-
-
 
 	/* 按鈕樣式 - 淺色主題下的背景色 */
 	button {
