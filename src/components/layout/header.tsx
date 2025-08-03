@@ -11,22 +11,24 @@ import { Input } from "@/components/ui/input"
 export default function Header() {
 	return (
 		<>
-			<nav className="container my-auto">
+			<div className="bg-black sticky">
+			<nav className="container mx-auto">
 				<div className="border border-blue-500 flex justify-between items-center">
 					{/* 左邊: logo+search */}
 					<div className="  border border-green-500 flex items-center text-black font-bold text-xl ">
 						{/* Logo 區塊 */}
 						<Logo />
 						{/* search 區塊 */}
-						<form role="search" className="flex items-center space-x-2">
-							<Input type="search" placeholder="Search" className="w-48 sm:hidden" />
+							<form role="search" className="items-center flex flex-row  gap-2 p-2">
+							<Input type="search" placeholder="Search" className="w-48 bg-white" />
 						</form>
 					</div>
 					{/* 右邊: 導覽項目+登入註冊 */}
 					<Navbar />
 				</div>
 
-			</nav>
+				</nav>
+			</div>
 		</>
 	)
 }

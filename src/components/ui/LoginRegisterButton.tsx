@@ -25,7 +25,7 @@ export const LoginRegisterButton = ({ className, ...props }: LoginRegisterButton
 		<Button
 			asChild
 			variant="ghost"
-			className="p-0 bg-transparent shadow-none" // Button 外層不要有背景
+			className="p-0 bg-red-600 shadow-none" // Button 外層不要有背景
 		>
 			<a
 				href="/register"

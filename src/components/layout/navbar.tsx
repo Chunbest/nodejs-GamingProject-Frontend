@@ -3,6 +3,7 @@ import React, { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { IoCartOutline } from "react-icons/io5";
 import { Menu, ShoppingCart, User } from "lucide-react"
 import { LoginRegisterButton } from "@/components/ui/LoginRegisterButton"
 
@@ -10,15 +11,14 @@ export default function Navbar() {
 	const [menuOpen, setMenuOpen] = useState(false)
 	return (
 		<>
-			<nav className="border border-red-500">
+			<div className="border border-red-500">
 				{/* 導覽連結 - 大螢幕顯示 */}
-				<div className=" lg:flex  items-center justify-between ">
-					<a href="#" className="border border-blue-500 text-gray-700 hover:text-blue-700  ">產品分類</a>
-					<a href="#" className="text-gray-700 hover:text-blue-700 ">關於我們</a>
-					<a href="#" className="text-gray-700 hover:text-blue-700  ">電競專欄</a>
-					<a href="#" className="hover:text-blue-700  ">
-						<ShoppingCart />
-					</a>
+				<div className=" items-center justify-between flex flex-row gap-4 p-4">
+					<a href="#" className="text-white hover:text-blue-700">產品分類</a>
+					<a href="#" className="text-white hover:text-blue-700">電競專欄</a>
+					<a href="#" className="text-white hover:text-blue-700">關於我們</a>
+					<a> <IoCartOutline href="#" className="w-full h-full text-white hover:text-blue-700" /></a>		
+					<a><ShoppingCart className="w-auto text-white hover:text-blue-700" /></a>
 					{/* 登入註冊按鈕 */}
 					<LoginRegisterButton href="/login" />
 
@@ -43,7 +43,7 @@ export default function Navbar() {
 						</SheetContent>
 					</Sheet>
 				</div>
-			</nav>
+			</div>
 		</>
 
 	)

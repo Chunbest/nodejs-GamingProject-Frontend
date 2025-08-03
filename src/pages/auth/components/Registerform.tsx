@@ -71,7 +71,7 @@ const RegisterForm = () => {
 	return (
 		<>
 			{/* 註冊卡片容器 */}
-			<Card className="max-w-sm">
+			<Card className="max-w-sm container">
 				<CardHeader>
 					<CardTitle>註冊會員 / 登入</CardTitle>
 				</CardHeader>
