@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css'; //  主要全域的CSS
+import './styles/globals.css';
 import App from './app/App';
 import { BrowserRouter } from 'react-router-dom';
 

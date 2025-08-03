@@ -1,6 +1,6 @@
 // 封裝 custom hook，這裡處理 API 請求與行為邏輯（成功跳轉、失敗提示）
 import { registerUser } from '@/api/auth';
-import type { RegisterSchema } from "@/features/auth/types/authSchema";
+import type { RegisterSchema } from "@/pages/auth/types/authSchema";
 
 // useAuth 自訂 hook，提供註冊功能
 export const useAuth = () => {

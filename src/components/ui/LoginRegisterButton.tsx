@@ -1,6 +1,6 @@
 import React from "react";
 import { cn } from "@/lib/utils"; // shadcn 提供的 class merge 工具
-import '../../index.css'; // 匯入主要全域的CSS
+
 import { Button } from "@/components/ui/button" // 匯入自定義的 Button 元件
 import { useNavigate } from "react-router-dom"; // 匯入 react-router-dom 的 useNavigate
 
@@ -31,7 +31,7 @@ export const LoginRegisterButton = ({ className, ...props }: LoginRegisterButton
 				href="/register"
 				onClick={handleClick}
 				className={cn(
-					"clip-custom-shape text-white px-[1.6em] py-[5px] text-2xl font-bold tracking-wide bg-red-gradient-hover bg-red-gradient ",
+					"clip-custom-shape text-white  text-2xl font-bold tracking-wide bg-red-gradient-hover bg-red-gradient ",
 					className
 				)}
 				{...props}

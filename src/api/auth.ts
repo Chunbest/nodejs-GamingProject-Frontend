@@ -1,5 +1,5 @@
 // 註冊、登入 API
-import type { RegisterSchema } from "@/features/auth/types/authSchema";
+import type { RegisterSchema } from "@/pages/auth/types/authSchema";
 import { privateAxios, publicAxios } from "./axiosInstance";
 
 // 具名函式匯出 named export

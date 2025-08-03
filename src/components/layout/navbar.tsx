@@ -10,14 +10,15 @@ export default function Navbar() {
 	const [menuOpen, setMenuOpen] = useState(false)
 	return (
 		<>
-			<nav >
+			<nav className="border border-red-500">
 				{/* 導覽連結 - 大螢幕顯示 */}
-				<div className="text-sm flex sm:flex-col lg:flex-row items-start lg:items-center justify-end gap-[2em] lg:mx-4 sm:hidden">
-
-					<a href="#" className="text-gray-700 hover:text-blue-700 py-[5px] ">產品分類</a>
-					<a href="#" className="text-gray-700 hover:text-blue-700 py-[5px]">關於我們</a>
-					<a href="#" className="text-gray-700 hover:text-blue-700  py-[5px]">電競專欄</a>
-					<a href="#" className="text-gray-700 hover:text-blue-700 flex items-center py-[5px]"><ShoppingCart className="h-5 w-5 " /></a>
+				<div className=" lg:flex  items-center justify-between ">
+					<a href="#" className="border border-blue-500 text-gray-700 hover:text-blue-700  ">產品分類</a>
+					<a href="#" className="text-gray-700 hover:text-blue-700 ">關於我們</a>
+					<a href="#" className="text-gray-700 hover:text-blue-700  ">電競專欄</a>
+					<a href="#" className="hover:text-blue-700  ">
+						<ShoppingCart />
+					</a>
 					{/* 登入註冊按鈕 */}
 					<LoginRegisterButton href="/login" />
 

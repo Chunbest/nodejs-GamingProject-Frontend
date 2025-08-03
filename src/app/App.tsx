@@ -1,12 +1,11 @@
-// Root component + router provider
-
 import { useState } from 'react';
 // import reactLogo from './assets/react.svg';
 // import viteLogo from '/vite.svg';
-import '../App.css';
+
+import '../styles/globals.css';
 import { Routes, Route } from 'react-router-dom'
 import Header from '../components/layout/header.tsx';
-import SignUp from '../features/auth/components/registerform.tsx'; // 引入註冊頁面元件
+import SignUp from '../pages/auth/components/Registerform.tsx'; // 引入註冊頁面元件
 import { Toaster } from "@/components/ui/toaster"
 
 
@@ -17,11 +16,20 @@ function App() {
 		<>
 			{/* 網站導覽列 - 固定在頁面頂部 */}
 			<Header />
+			<main>
+				<section className="w-full overflow-hidden relative bg-black-500">
+										<div className="text-center m-0 bg-gray-100 border border-gray-300 text-gray-800 px-4 py-3 rounded">
+						<strong className="font-semibold">🎉 周年慶！滿千送百，精美小禮加碼送～ 🎉</strong>
+					</div>
+
+					{/* 手動加左右箭頭或 dot */}
+				</section>
+			</main>
 			{/* Toast 通知組件 */}
 			<Toaster />
 			{/* 路由設定區域 - 根據 URL 顯示對應的頁面元件 */}
 			<Routes>
-				
+
 				{/* 註冊頁面路由 - 當 URL 為 /register 時顯示註冊表單 */}
 				<Route path="/register" element={<SignUp />} />
 				{/* 登入頁面路由 - 待實作 */}
@@ -39,9 +47,10 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a> */}
 
-		
+
 		</>
 	);
 }
+
 
 export default App;

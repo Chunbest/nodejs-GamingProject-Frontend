@@ -25,7 +25,7 @@ import { Label } from "@/components/ui/label"
 // 匯入自定義 toast hook
 import { useToast } from "@/hooks/use-toast"
 // 匯入全域 CSS
-import '../../../index.css'; // 匯入主要全域的CSS
+
 
 // 註冊表單元件
 const RegisterForm = () => {
