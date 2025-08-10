@@ -4,10 +4,11 @@ import { useState } from 'react';
 
 import '../styles/globals.css';
 import { Routes, Route } from 'react-router-dom'
-import Navbar1 from '../components/layout/header.tsx';
+import Header from '../components/layout/header.tsx';
 import SignUp from '../pages/auth/components/Registerform.tsx'; // 引入註冊頁面元件
 import { Toaster } from "@/components/ui/toaster"
-import  CarouselWithPagination from "../pages/home/banner.tsx";
+
+import CarouselWithPagination from "../pages/home/banner.tsx";
 
 import { Button } from "@/components/ui/button" // 匯入自定義的 Button 元件
 
@@ -17,10 +18,13 @@ function App() {
 	return (
 		<>
 			{/* 網站導覽列 - 固定在頁面頂部 */}
-			<Navbar1 />
-			<CarouselWithPagination/>
+			
+			
+			<Header />
+
+			{/* <CarouselWithPagination/> */}
 			<main>
-				<section className="w-full overflow-hidden relative bg-black-500">
+				<section className="max-width overflow-hidden relative bg-black-500">
 					{/* 跑馬燈 */}
 					<div className="text-center m-0 bg-gray-100 border border-gray-300 text-gray-800 px-4 py-3 rounded">
 						<strong className="font-semibold">🎉 周年慶！滿千送百，精美小禮加碼送～ 🎉</strong>
@@ -65,7 +69,7 @@ function App() {
 								立即選購
 							</a>
 						</div>
-						
+
 					</div>
 					{/* 手動加左右箭頭或 dot */}
 				</section>
