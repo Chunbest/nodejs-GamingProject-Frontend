@@ -1,6 +1,6 @@
 import { Book, Link, Menu, ShoppingCart, Sunset, Trees, Zap } from "lucide-react";
-import CommandDemo from './globalsearch';
-import SearchWithDropdown  from './globalsearch';
+import GlobalSearch from './globalsearch';
+
 
 
 import {
@@ -136,16 +136,15 @@ const Header = ({
 						<a href={logo.url} className="flex items-center gap-2">
 							<img
 								src={logo.src}
-								className="max-h-8 dark:invert"
+								className="max-h-10 dark:invert"
 								alt={logo.alt}
 							/>
-							<span className="text-lg font-semibold tracking-tighter">
+							{/* <span className="text-lg font-semibold tracking-tighter">
 								{logo.title}
-							</span>
+							</span> */}
 
 						</a>
-						<CommandDemo />
-						{/* <SearchWithDropdown /> */}
+						<GlobalSearch />
 
 					</div>
 					<div className="flex gap-2">
