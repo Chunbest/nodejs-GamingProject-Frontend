@@ -31,7 +31,7 @@ export const LoginRegisterButton = ({ className, ...props }: LoginRegisterButton
 				href="/register"
 				onClick={handleClick}
 				className={cn(
-					"clip-custom-shape text-white  text-2xl font-bold tracking-wide bg-red-gradient-hover bg-red-gradient ",
+					"clip-custom-shape text-white  text-2xl font-bold tracking-wide bg-red-gradient-hover bg-red-gradient clip-custom-shape p-2 px-4",
 					className
 				)}
 				{...props}

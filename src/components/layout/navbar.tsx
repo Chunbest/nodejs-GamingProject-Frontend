@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { IoCartOutline } from "react-icons/io5";
 import { Menu, ShoppingCart, User } from "lucide-react"
-import { LoginRegisterButton } from "@/components/ui/LoginRegisterButton"
+
 
 export default function Navbar() {
 	const [menuOpen, setMenuOpen] = useState(false)
@@ -19,8 +19,7 @@ export default function Navbar() {
 					<a href="#" className="text-white hover:text-blue-700">關於我們</a>
 					<a> <IoCartOutline href="#" className="w-full h-full text-white hover:text-blue-700" /></a>		
 					<a><ShoppingCart className="w-auto text-white hover:text-blue-700" /></a>
-					{/* 登入註冊按鈕 */}
-					<LoginRegisterButton href="/login" />
+					
 
 				</div>
 				{/* 小螢幕選單按鈕 - 使用 Sheet */}

@@ -1,6 +1,6 @@
 import { Book, Link, Menu, ShoppingCart, Sunset, Trees, Zap } from "lucide-react";
 import GlobalSearch from './globalsearch';
-
+import { LoginRegisterButton } from "@/components/layout/LoginRegisterButton"
 
 
 import {
@@ -154,14 +154,16 @@ const Header = ({
 									{menu.map((item) => renderMenuItem(item))}
 								</NavigationMenuList>
 							</NavigationMenu>
-							<a><ShoppingCart className="w-auto text-white hover:text-blue-500" /></a>
+							<a><ShoppingCart className="px-4 size-5 w-auto text-white hover:text-blue-500" /></a>
+						<LoginRegisterButton href="/login" />
 						</div>
-						<Button asChild variant="outline" size="sm">
+						{/* 登入註冊按鈕 */}
+						{/* <Button asChild variant="outline" size="sm">
 							<a href={auth.login.url}>{auth.login.title}</a>
 						</Button>
 						<Button asChild size="sm">
 							<a href={auth.signup.url}>{auth.signup.title}</a>
-						</Button>
+						</Button> */}
 					</div>
 				</div>
 
@@ -206,6 +208,7 @@ const Header = ({
 									</Accordion>
 
 									<div className="flex flex-col gap-3">
+										
 										<Button asChild variant="outline">
 											<a href={auth.login.url}>{auth.login.title}</a>
 										</Button>
