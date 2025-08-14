@@ -9,6 +9,8 @@ import SignUp from '../pages/auth/components/Registerform.tsx'; // 引入註冊�
 import { Toaster } from "@/components/ui/toaster"
 
 import CarouselWithPagination from "../pages/home/banner.tsx";
+import Swipe from "../pages/home/banner1.tsx";
+
 
 import { Button } from "@/components/ui/button" // 匯入自定義的 Button 元件
 
@@ -22,7 +24,8 @@ function App() {
 			
 			<Header />
 
-			{/* <CarouselWithPagination/> */}
+			{/* <CarouselWithPagination /> */}
+			<Swipe/>
 			<main>
 				<section className="max-width overflow-hidden relative bg-black-500">
 					{/* 跑馬燈 */}
