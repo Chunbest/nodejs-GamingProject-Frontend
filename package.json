@@ -25,7 +25,6 @@
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
     "embla-carousel-react": "^8.6.0",
-    "esbuild": "^0.25.9",
     "lucide-react": "^0.525.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
@@ -36,7 +35,6 @@
     "sonner": "^2.0.5",
     "swiper": "^11.2.10",
     "tailwind-merge": "^3.3.1",
-    "vite": "^7.1.2",
     "zod": "^3.25.67",
     "zustand": "^5.0.6"
   },
@@ -49,6 +47,7 @@
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^5.0.0",
     "autoprefixer": "^10.4.21",
+    "esbuild": "^0.21.5",
     "eslint": "^9.29.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
@@ -58,6 +57,7 @@
     "sass": "^1.89.2",
     "tailwindcss": "^4.1.11",
     "typescript": "~5.8.3",
-    "typescript-eslint": "^8.34.1"
+    "typescript-eslint": "^8.34.1",
+    "vite": "^6.3.5"
   }
 }

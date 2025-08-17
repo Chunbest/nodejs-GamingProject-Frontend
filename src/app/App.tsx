@@ -8,7 +8,6 @@ import Header from '../components/layout/header.tsx';
 import SignUp from '../pages/auth/components/Registerform.tsx'; // 引入註冊頁面元件
 import { Toaster } from "@/components/ui/toaster"
 
-import CarouselWithPagination from "../pages/home/banner.tsx";
 import Swipe from "../pages/home/banner1.tsx";
 
 
@@ -20,21 +19,20 @@ function App() {
 	return (
 		<>
 			{/* 網站導覽列 - 固定在頁面頂部 */}
-			
-			
 			<Header />
-
-			{/* <CarouselWithPagination /> */}
-			<Swipe/>
+	
 			<main>
 				<section className="max-width overflow-hidden relative bg-black-500">
 					{/* 跑馬燈 */}
-					<div className="text-center m-0 bg-gray-100 border border-gray-300 text-gray-800 px-4 py-3 rounded">
+					<div className="text-center m-0 bg-gray-100 border border-gray-300 text-gray-800 px-4 py-2 ">
 						<strong className="font-semibold">🎉 周年慶！滿千送百，精美小禮加碼送～ 🎉</strong>
 					</div>
 					{/* banner輪播 */}
-					<div className="relative w-full h-[80vh] bg-cover bg-center bg-no-repeat bg-[url('/keyboard.png')] flex items-center justify-center">
-						<div className="text-center flex flex-col items-center gap-4 px-4">
+<Swipe/>
+					
+					{/* <div className="relative ">
+						<Swipe className="aboulate" />
+						<div className="z-50 text-center flex flex-col items-center gap-4 px-4">
 							<h1 className="text-white font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-wide leading-snug">
 								電競操控，<span className="text-red-500">極速致勝</span>
 							</h1>
@@ -45,15 +43,11 @@ function App() {
 							>
 								立即選購
 							</a>
-
-							{/* Swiper 指示點（如你圖中中間三個點點） */}
-							<div className="flex gap-2 mt-4">
-								<span className="w-2 h-2 bg-white rounded-full opacity-70"></span>
-								<span className="w-2 h-2 bg-white rounded-full opacity-30"></span>
-								<span className="w-2 h-2 bg-white rounded-full opacity-30"></span>
-							</div>
 						</div>
-					</div>
+					</div> */}
+
+				
+
 
 					<div className="h-svh w-auto bg-cover bg-center bg-no-repeat bg-[url('/keyboard.jpg')] flex items-start  justify-center px-6">
 						<div className="mt-6  text-center flex flex-col items-center gap-6 max-w-3xl">
