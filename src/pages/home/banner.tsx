@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import '@/styles/swiper.css';
-import { Button } from "../../components/layout/buttonNew" // 匯入自定義的 Button 元件
+import { ButtonNew } from "../../components/layout/buttonNew" // 匯入自定義的 Button 元件
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
@@ -14,7 +14,7 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 export default function Banner() {
 	return (
 		<>
-			
+
 
 			<div className="relative">
 				{/* 輪播圖 */}
@@ -57,15 +57,14 @@ export default function Banner() {
 					<h1 className="text-white font-extrabold text-2xl sm:text-2xl md:text-3xl lg:text-4xl tracking-wide leading-snug drop-shadow-lg  py-5 ">
 						電競操控，<span className="text-red-500">極速致勝</span>
 					</h1>
-					<Button>
-
+					<ButtonNew asChild>
 						<a
 							href="#hot-products"
 							className=" hover:bg-red-700 text-white  lg:text-sm sm:text-xm md:text-xs  transition-all duration-300 shadow-lg"
 						>
 							立即選購
 						</a>
-					</Button>
+					</ButtonNew>
 				</div>
 			</div>
 		</>

@@ -1,7 +1,7 @@
 import React from "react";
 import { cn } from "@/lib/utils"; // shadcn 提供的 class merge 工具
 
-import { Button } from "../layout/buttonNew" // 匯入自定義的 Button 元件
+import { ButtonNew } from "../layout/buttonNew" // 匯入自定義的 Button 元件
 import { useNavigate } from "react-router-dom"; // 匯入 react-router-dom 的 useNavigate
 
 // 定義元件的 props，繼承自 a 標籤的所有屬性
@@ -22,7 +22,7 @@ export const LoginRegisterButton = ({ className, ...props }: LoginRegisterButton
 	};
 
 	return (
-		<Button
+		<ButtonNew
 			asChild
 			variant="ghost"
 			className="" // Button 外層不要有背景
@@ -37,6 +37,6 @@ export const LoginRegisterButton = ({ className, ...props }: LoginRegisterButton
 			>
 				登入／註冊
 			</a>
-		</Button>
+		</ButtonNew>
 	);
 };

@@ -8,6 +8,8 @@ import SignUp from '../pages/auth/components/Registerform.tsx'; // 引入註冊�
 import { Toaster } from "@/components/ui/toaster"
 
 import Banner from "../pages/home/banner.tsx";
+import ProductCard, { products } from "../pages/home/productCard.tsx";
+
 
 import { Button } from "@/components/ui/button" // 匯入自定義的 Button 元件
 
@@ -18,7 +20,7 @@ function App() {
 		<>
 			{/* 網站導覽列 - 固定在頁面頂部 */}
 			<Header />
-
+		
 
 			<main>
 				<section className="max-width overflow-hidden relative bg-black-500">
@@ -29,7 +31,7 @@ function App() {
 					{/* carousel輪播 */}
 					<Banner />
 
-
+					<ProductCard products={products} />
 					{/* 手動加左右箭頭或 dot */}
 				</section>
 			</main>
